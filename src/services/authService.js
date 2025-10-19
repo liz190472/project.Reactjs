@@ -1,5 +1,4 @@
-cat > ~/Escritorio/ToallasLizzy\ \ GA8\ AA1-EV01/frontend/src/services/authService.js << 'EOF'
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'http://localhost:8001/api';
 
 const authService = {
   login: async (email, password) => {
@@ -39,4 +38,3 @@ const authService = {
 };
 
 export default authService;
-EOF

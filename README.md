@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# Project ReactJS - Sistema CRUD "Toallas Lizzy"
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Proyecto formativo desarrollado con React JS para el componente de desarrollo frontend. Sistema de gestión de productos con autenticación y operaciones CRUD completas.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Información del Proyecto
 
-### `npm start`
+- **Nombre:** project.reactjs
+- **Ubicación:** /home/tony/Escritorio/project.reactjs
+- **Framework:** React
+- **Tipo:** Aplicación Web - CRUD de Productos
+- **Gestor de paquetes:** npm
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tecnologías y Versiones
 
-### `npm test`
+### Entorno de Desarrollo
+- **Sistema Operativo:** Linux (Ubuntu 18.04)
+- **Node.js:** v16.20.2
+- **npm:** v8.19.4
+- **NVM (Node Version Manager):** v0.39.0
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Framework y Librerías
+- **React:** v18.x (instalado con create-react-app)
+- **React DOM:** v18.x
+- **React Scripts:** v5.x
 
-### `npm run build`
+### Herramientas de Desarrollo
+- **Create React App:** v5.1.0
+- **Editor:** Visual Studio Code
+- **Control de versiones:** Git (inicializado)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Instalación y Configuración
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Instalación de NVM (Node Version Manager)
+```bash
+# Descargar e instalar NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 
-### `npm run eject`
+# Cargar NVM (o reiniciar terminal)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Instalar Node.js 16
+nvm install 16
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Usar Node.js 16
+nvm use 16
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Establecer como versión predeterminada
+nvm alias default 16
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+##  Enlaces Útiles
 
-## Learn More
+- **Documentación de React
+- **Create React App
+- **Node.js
+- **NVM
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+"" 📝 Validaciones Implementadas
+Campo/AcciónValidaciónMensajeUsuario (Login)Campo vacío"Por favor, ingrese usuario y contraseña"Contraseña (Login)Campo vacío"Por favor, ingrese usuario y contraseña"EANObligatorio"Por favor, complete todos los campos obligatorios"ReferenciaObligatorio"Por favor, complete todos los campos obligatorios"Valor UnitarioObligatorio"Por favor, complete todos los campos obligatorios"Eliminar productoConfirmación"¿Está seguro de eliminar este producto?"

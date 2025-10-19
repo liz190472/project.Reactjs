@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './styles.css';
+import './Subcabecera.css';
 
 // Este componente muestra la subcabecera con fecha y título de la sección
 function Subcabecera({ titulo }) {
@@ -12,7 +12,7 @@ function Subcabecera({ titulo }) {
   });
 
   return (
-    <div style={styles.subcabecera}>
+    <div className="subcabecera">
       <p>{fechaActual}</p>
       <p>{titulo}</p>
     </div>
