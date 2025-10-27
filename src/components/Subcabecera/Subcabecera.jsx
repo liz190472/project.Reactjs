@@ -10,7 +10,7 @@ function Subcabecera({ titulo }) {
     month: 'long',
     day: 'numeric'
   });
-
+  
   return (
     <div className="subcabecera">
       <p>{fechaActual}</p>
