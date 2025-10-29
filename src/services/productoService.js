@@ -10,56 +10,57 @@ const productoService = {
         },
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Error al obtener productos');
+        throw new Error(data.message || 'Error al obtener productos');
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
+      console.error('Error en getProductos:', error);
       throw error;
     }
   },
 
   crearProducto: async (formData) => {
     try {
-      // NO incluir Content-Type cuando se envía FormData
-      // El navegador lo configura automáticamente
       const response = await fetch(`${API_URL}/productos`, {
         method: 'POST',
-        body: formData, // FormData se envía directamente
+        body: formData,
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw errorData;
+        throw new Error(data.message || 'Error al crear producto');
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
+      console.error('Error en crearProducto:', error);
       throw error;
     }
   },
 
   actualizarProducto: async (id, formData) => {
     try {
-      // Agregar _method para simular PUT (Laravel lo requiere con FormData)
       formData.append('_method', 'PUT');
       
       const response = await fetch(`${API_URL}/productos/${id}`, {
-        method: 'POST', // Usamos POST con _method=PUT
+        method: 'POST',
         body: formData,
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const errorData = await response.json();
-        throw errorData;
+        throw new Error(data.message || 'Error al actualizar producto');
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
+      console.error('Error en actualizarProducto:', error);
       throw error;
     }
   },
@@ -73,13 +74,15 @@ const productoService = {
         },
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error('Error al eliminar producto');
+        throw new Error(data.message || 'Error al eliminar producto');
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
+      console.error('Error en eliminarProducto:', error);
       throw error;
     }
   }

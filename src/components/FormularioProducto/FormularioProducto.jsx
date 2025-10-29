@@ -3,11 +3,11 @@ import React, { useState } from 'react';
 function FormularioProducto({ producto, onGuardar, onCancelar }) {
   const [formData, setFormData] = useState({
     ean_producto: producto?.ean_producto || '',
-    Referencia: producto?.Referencia || '',
-    Gramos: producto?.Gramos || '',
-    Tamano: producto?.Tamano || '',
-    Color: producto?.Color || '',
-    PrecioUnitario: producto?.PrecioUnitario || ''
+    referencia: producto?.Referencia || '',
+    gramos: producto?.Gramos || '',
+    tamano: producto?.Tamano || '',
+    color: producto?.Color || '',
+    preciounitario: producto?.PrecioUnitario || ''
   });
 
   const [imagen, setImagen] = useState(null);
@@ -31,7 +31,7 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!formData.ean_producto || !formData.Referencia || !formData.PrecioUnitario) {
+    if (!formData.ean_producto || !formData.referencia || !formData.preciounitario) {
       alert('Error: Por favor complete los campos obligatorios (EAN, Referencia y Valor Unitario)');
       return;
     }
@@ -39,11 +39,11 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
     // Crear FormData para enviar
     const dataToSend = new FormData();
     dataToSend.append('ean_producto', formData.ean_producto);
-    dataToSend.append('Referencia', formData.Referencia);
-    dataToSend.append('Gramos', formData.Gramos || '');
-    dataToSend.append('Tamano', formData.Tamano || '');
-    dataToSend.append('Color', formData.Color || '');
-    dataToSend.append('PrecioUnitario', formData.PrecioUnitario);
+    dataToSend.append('referencia', formData.referencia);
+    dataToSend.append('gramos', formData.gramos || '');
+    dataToSend.append('tamano', formData.tamano || '');
+    dataToSend.append('color', formData.color || '');
+    dataToSend.append('preciounitario', formData.preciounitario);
     
     // Agregar imagen si existe
     if (imagen) {
@@ -94,14 +94,14 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
             </div>
 
             <div>
-              <label htmlFor="Referencia" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+              <label htmlFor="referencia" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
                 Referencia: *
               </label>
               <input
                 type="text"
-                id="Referencia"
-                name="Referencia"
-                value={formData.Referencia}
+                id="referencia"
+                name="referencia"
+                value={formData.referencia}
                 onChange={handleChange}
                 placeholder="Referencia del producto"
                 required
@@ -119,14 +119,14 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '25px' }}>
             <div>
-              <label htmlFor="Gramos" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+              <label htmlFor="gramos" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
                 Gramos:
               </label>
               <input
                 type="number"
-                id="Gramos"
-                name="Gramos"
-                value={formData.Gramos}
+                id="gramos"
+                name="gramos"
+                value={formData.gramos}
                 onChange={handleChange}
                 placeholder="Peso en gramos"
                 style={{
@@ -141,14 +141,14 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
             </div>
 
             <div>
-              <label htmlFor="Tamano" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+              <label htmlFor="tamano" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
                 Tamaño:
               </label>
               <input
                 type="text"
-                id="Tamano"
-                name="Tamano"
-                value={formData.Tamano}
+                id="tamano"
+                name="tamano"
+                value={formData.tamano}
                 onChange={handleChange}
                 placeholder="Tamaño del producto"
                 style={{
@@ -165,14 +165,14 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '25px', marginBottom: '25px' }}>
             <div>
-              <label htmlFor="Color" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+              <label htmlFor="color" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
                 Color:
               </label>
               <input
                 type="text"
-                id="Color"
-                name="Color"
-                value={formData.Color}
+                id="color"
+                name="color"
+                value={formData.color}
                 onChange={handleChange}
                 placeholder="Color del producto"
                 style={{
@@ -187,14 +187,14 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
             </div>
 
             <div>
-              <label htmlFor="PrecioUnitario" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
+              <label htmlFor="preciounitario" style={{ display: 'block', marginBottom: '8px', fontWeight: 'bold' }}>
                 Valor Unitario: *
               </label>
               <input
                 type="number"
-                id="PrecioUnitario"
-                name="PrecioUnitario"
-                value={formData.PrecioUnitario}
+                id="preciounitario"
+                name="preciounitario"
+                value={formData.preciounitario}
                 onChange={handleChange}
                 placeholder="Precio del producto"
                 required
@@ -212,7 +212,7 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
 
           <div style={{ marginBottom: '30px', padding: '20px', border: '2px dashed #007bff', borderRadius: '8px', backgroundColor: '#f9f9f9' }}>
             <label htmlFor="imagen" style={{ display: 'block', marginBottom: '12px', fontWeight: 'bold', fontSize: '16px' }}>
-              📷 Imagen del Producto (Opcional):
+              Imagen del Producto (Opcional):
             </label>
             <input
               type="file"
@@ -233,7 +233,7 @@ function FormularioProducto({ producto, onGuardar, onCancelar }) {
             {imagen && (
               <div style={{ marginTop: '15px', padding: '10px', backgroundColor: '#e8f5e9', borderRadius: '4px', borderLeft: '4px solid #4caf50' }}>
                 <p style={{ margin: '0', fontSize: '14px', color: '#2e7d32', fontWeight: 'bold' }}>
-                  ✓ Archivo seleccionado: {imagen.name}
+                  Archivo seleccionado: {imagen.name}
                 </p>
               </div>
             )}
